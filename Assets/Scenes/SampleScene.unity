@@ -548,6 +548,7 @@ GameObject:
   - component: {fileID: 907984448}
   - component: {fileID: 907984447}
   - component: {fileID: 907984449}
+  - component: {fileID: 907984450}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -598,6 +599,20 @@ MonoBehaviour:
   itemList: []
   content: {fileID: 657968080715984911}
   totalProfit_Text: {fileID: 5090129449110087550}
+--- !u!114 &907984450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907984446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40098fab7e55d1a41a5c492d109fc595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenWidth: 860
+  screenHeight: 620
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2696,7 +2711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3016219259814854727
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4926,10 +4941,10 @@ RectTransform:
   m_Father: {fileID: 4322898088455139950}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 98.83331, y: -30}
+  m_SizeDelta: {x: 177.66666, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8327425957202119046
 MonoBehaviour:

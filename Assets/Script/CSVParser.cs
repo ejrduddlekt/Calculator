@@ -1,4 +1,4 @@
-using AYellowpaper.SerializedCollections;
+ï»¿using AYellowpaper.SerializedCollections;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,69 +25,69 @@ public class CSVParser : MonoBehaviour
         {
             string[] split = allLines[i].Split(',');
 
-            // ±¸¸ÅÈ®Á¤ÀÏÀ» DateTimeÀ¸·Î º¯È¯
+            // êµ¬ë§¤í™•ì •ì¼ì„ DateTimeìœ¼ë¡œ ë³€í™˜
             DateTime purchaseConfirmationDate = DateTime.Parse(split[2]);
-            // Å°°ªÀ¸·Î »ç¿ëÇÒ Çü½ÄÀ¸·Î ±¸¸ÅÈ®Á¤ÀÏÀ» º¯È¯
+            // í‚¤ê°’ìœ¼ë¡œ ì‚¬ìš©í•  í˜•ì‹ìœ¼ë¡œ êµ¬ë§¤í™•ì •ì¼ì„ ë³€í™˜
             string key = purchaseConfirmationDate.ToString("yyyyMM");
 
             NaverOrderResource Data = new NaverOrderResource(
-                split[0],  // »óÇ°ÁÖ¹®¹øÈ£
-                split[1],  // ÁÖ¹®¹øÈ£
-                split[2],  // ±¸¸ÅÈ®Á¤ÀÏ
-                split[3],  // ÆÇ¸ÅÃ¤³Î
-                split[4],  // ÁÖ¹®»óÅÂ
-                split[5],  // ¹è¼Û¼Ó¼º
-                split[6],  // Ç®ÇÊ¸ÕÆ®»ç(ÁÖ¹® ±âÁØ)
-                split[7],  // ±¸¸ÅÀÚ¸í
-                split[8],  // ±¸¸ÅÀÚID
-                split[9],  // ¼öÃëÀÎ¸í
-                split[10], // ¹ß¼ÛÃ³¸®ÀÏ
-                split[11], // ¹è¼Û¹æ¹ı
-                split[12], // ÅÃ¹è»ç
-                split[13], // ¼ÛÀå¹øÈ£
-                split[14], // ¹è¼Û¿Ï·áÀÏ
-                split[15], // »óÇ°¹øÈ£
-                split[16], // »óÇ°¸í
-                split[17], // »óÇ°Á¾·ù
-                split[18], // ¹İÇ°¾È½ÉÄÉ¾î
-                split[19], // ¿É¼ÇÁ¤º¸
-                split[20], // ¿É¼Ç°ü¸®ÄÚµå
-                split[21], // ¼ö·®
-                ItemManager.RemoveWonAndBackslash(split[22]), // »óÇ°°¡°İ
-                ItemManager.RemoveWonAndBackslash(split[23]), // ¿É¼Ç°¡°İ
-                ItemManager.RemoveWonAndBackslash(split[24]), // »óÇ°º° ÇÒÀÎ¾×
-                ItemManager.RemoveWonAndBackslash(split[25]), // ÆÇ¸ÅÀÚ ºÎ´ã ÇÒÀÎ¾×
-                ItemManager.RemoveWonAndBackslash(split[26]), // »óÇ°º° ÃÑ ÁÖ¹®±İ¾×
-                split[27], // ÆÇ¸ÅÀÚ »óÇ°ÄÚµå
-                split[28], // ÆÇ¸ÅÀÚ ³»ºÎÄÚµå1
-                split[29], // ÆÇ¸ÅÀÚ ³»ºÎÄÚµå2
-                split[30], // ¹è¼Ûºñ ¹­À½¹øÈ£
-                split[31], // ¹è¼Ûºñ ÇüÅÂ
-                split[32], // ¹è¼Ûºñ À¯Çü
-                ItemManager.RemoveWonAndBackslash(split[33]), // ¹è¼Ûºñ ÇÕ°è
-                ItemManager.RemoveWonAndBackslash(split[34]), // Á¦ÁÖ/µµ¼­ Ãß°¡¹è¼Ûºñ
-                ItemManager.RemoveWonAndBackslash(split[35]), // ¹è¼Ûºñ ÇÒÀÎ¾×
-                split[36], // °áÁ¦ÀÏ
-                split[37], // °áÁ¦¼ö´Ü
-                split[38], // °áÁ¦À§Ä¡
-                split[39], // ¼ö¼ö·á °ú±İ±¸ºĞ
-                split[40], // ¼ö¼ö·á°áÁ¦¹æ½Ä
-                ItemManager.RemoveWonAndBackslash(split[41]), // ³×ÀÌ¹öÆäÀÌ ÁÖ¹®°ü¸® ¼ö¼ö·á
-                ItemManager.RemoveWonAndBackslash(split[42]), // ¸ÅÃâ¿¬µ¿ ¼ö¼ö·á
-                ItemManager.RemoveWonAndBackslash(split[43]), // Á¤»ê¿¹Á¤±İ¾×
-                split[44]  // ¸ÅÃâ¿¬µ¿¼ö¼ö·á À¯ÀÔ°æ·Î
+                split[0],  // ìƒí’ˆì£¼ë¬¸ë²ˆí˜¸
+                split[1],  // ì£¼ë¬¸ë²ˆí˜¸
+                split[2],  // êµ¬ë§¤í™•ì •ì¼
+                split[3],  // íŒë§¤ì±„ë„
+                split[4],  // ì£¼ë¬¸ìƒíƒœ
+                split[5],  // ë°°ì†¡ì†ì„±
+                split[6],  // í’€í•„ë¨¼íŠ¸ì‚¬(ì£¼ë¬¸ ê¸°ì¤€)
+                split[7],  // êµ¬ë§¤ìëª…
+                split[8],  // êµ¬ë§¤ìID
+                split[9],  // ìˆ˜ì·¨ì¸ëª…
+                split[10], // ë°œì†¡ì²˜ë¦¬ì¼
+                split[11], // ë°°ì†¡ë°©ë²•
+                split[12], // íƒë°°ì‚¬
+                split[13], // ì†¡ì¥ë²ˆí˜¸
+                split[14], // ë°°ì†¡ì™„ë£Œì¼
+                split[15], // ìƒí’ˆë²ˆí˜¸
+                split[16], // ìƒí’ˆëª…
+                split[17], // ìƒí’ˆì¢…ë¥˜
+                split[18], // ë°˜í’ˆì•ˆì‹¬ì¼€ì–´
+                split[19], // ì˜µì…˜ì •ë³´
+                split[20], // ì˜µì…˜ê´€ë¦¬ì½”ë“œ
+                split[21], // ìˆ˜ëŸ‰
+                ItemManager.RemoveWonAndBackslash(split[22]), // ìƒí’ˆê°€ê²©
+                ItemManager.RemoveWonAndBackslash(split[23]), // ì˜µì…˜ê°€ê²©
+                ItemManager.RemoveWonAndBackslash(split[24]), // ìƒí’ˆë³„ í• ì¸ì•¡
+                ItemManager.RemoveWonAndBackslash(split[25]), // íŒë§¤ì ë¶€ë‹´ í• ì¸ì•¡
+                ItemManager.RemoveWonAndBackslash(split[26]), // ìƒí’ˆë³„ ì´ ì£¼ë¬¸ê¸ˆì•¡
+                split[27], // íŒë§¤ì ìƒí’ˆì½”ë“œ
+                split[28], // íŒë§¤ì ë‚´ë¶€ì½”ë“œ1
+                split[29], // íŒë§¤ì ë‚´ë¶€ì½”ë“œ2
+                split[30], // ë°°ì†¡ë¹„ ë¬¶ìŒë²ˆí˜¸
+                split[31], // ë°°ì†¡ë¹„ í˜•íƒœ
+                split[32], // ë°°ì†¡ë¹„ ìœ í˜•
+                ItemManager.RemoveWonAndBackslash(split[33]), // ë°°ì†¡ë¹„ í•©ê³„
+                ItemManager.RemoveWonAndBackslash(split[34]), // ì œì£¼/ë„ì„œ ì¶”ê°€ë°°ì†¡ë¹„
+                ItemManager.RemoveWonAndBackslash(split[35]), // ë°°ì†¡ë¹„ í• ì¸ì•¡
+                split[36], // ê²°ì œì¼
+                split[37], // ê²°ì œìˆ˜ë‹¨
+                split[38], // ê²°ì œìœ„ì¹˜
+                split[39], // ìˆ˜ìˆ˜ë£Œ ê³¼ê¸ˆêµ¬ë¶„
+                split[40], // ìˆ˜ìˆ˜ë£Œê²°ì œë°©ì‹
+                ItemManager.RemoveWonAndBackslash(split[41]), // ë„¤ì´ë²„í˜ì´ ì£¼ë¬¸ê´€ë¦¬ ìˆ˜ìˆ˜ë£Œ
+                ItemManager.RemoveWonAndBackslash(split[42]), // ë§¤ì¶œì—°ë™ ìˆ˜ìˆ˜ë£Œ
+                ItemManager.RemoveWonAndBackslash(split[43]), // ì •ì‚°ì˜ˆì •ê¸ˆì•¡
+                split[44]  // ë§¤ì¶œì—°ë™ìˆ˜ìˆ˜ë£Œ ìœ ì…ê²½ë¡œ
             );
 
 
-            // Å°°ªÀÌ ÀÌ¹Ì Á¸ÀçÇÏ´ÂÁö È®ÀÎ
+            // í‚¤ê°’ì´ ì´ë¯¸ ì¡´ì¬í•˜ëŠ”ì§€ í™•ì¸
             if (orderDataContainer.ContainsKey(key))
             {
-                // ÀÌ¹Ì Á¸ÀçÇÏ´Â °æ¿ì ÇØ´ç ¸®½ºÆ®¿¡ µ¥ÀÌÅÍ Ãß°¡
+                // ì´ë¯¸ ì¡´ì¬í•˜ëŠ” ê²½ìš° í•´ë‹¹ ë¦¬ìŠ¤íŠ¸ì— ë°ì´í„° ì¶”ê°€
                 orderDataContainer[key].Add(Data);
             }
             else
             {
-                // Á¸ÀçÇÏÁö ¾Ê´Â °æ¿ì »õ·Î¿î ¸®½ºÆ® »ı¼º ÈÄ µ¥ÀÌÅÍ Ãß°¡
+                // ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ê²½ìš° ìƒˆë¡œìš´ ë¦¬ìŠ¤íŠ¸ ìƒì„± í›„ ë°ì´í„° ì¶”ê°€
                 List<NaverOrderResource> dataList = new List<NaverOrderResource>();
                 dataList.Add(Data);
                 orderDataContainer[key] = dataList;
@@ -110,57 +110,57 @@ public class CSVParser : MonoBehaviour
             string[] split = allLines[i].Split(',');
 
             ZigzagOrderResource data = new ZigzagOrderResource(
-                split[0],  // (1) (A) ½ºÅä¾î¸í
-                split[1],  // (2) (B) »óÇ°ÁÖ¹®¹øÈ£
-                split[2],  // (3) (C) ÁÖ¹®¹øÈ£
-                split[3],  // (4) (D) ±¸¸ÅÈ®Á¤ÀÏ
-                split[4],  // (5) (E) ±¸¸ÅÀÚ¸í
-                split[5],  // (6) (F) ±¸¸ÅÀÚ ID
-                split[6],  // (7) (G) ±¸¸ÅÀÚ ¿¬¶ôÃ³
-                split[7],  // (8) (H) ÁÖ¹®»óÅÂ
-                split[8],  // (9) (I) ÁÖ¹®ÀÏ½Ã
-                split[9],  // (10) (J) »óÇ°ÄÚµå
-                split[10], // (11) (K) ÀÚÃ¼»óÇ°ÄÚµå
-                split[11], // (12) (L) »óÇ°¸í
-                split[12], // (13) (M) Ç°¸ñÄÚµå
-                split[13], // (14) (N) ÀÚÃ¼Ç°¸ñÄÚµå
-                split[14], // (15) (O) ¿É¼ÇÁ¤º¸
-                ItemManager.RemoveWonAndBackslash(split[15]), // (16) (P) ÆÇ¸Å°¡
-                ItemManager.RemoveWonAndBackslash(split[16]), // (17) (Q) »óÇ° ÇÒÀÎ¾×
-                ItemManager.RemoveWonAndBackslash(split[17]), // (18) (R) »óÇ°°¡°İ
-                split[18], // (19) (S) ¼ö·®
-                ItemManager.RemoveWonAndBackslash(split[19]), // (20) (T) »óÇ°ÁÖ¹®¾×
-                ItemManager.RemoveWonAndBackslash(split[20]), // (21) (U) ÄíÆù ÇÒÀÎ ±İ¾×
-                ItemManager.RemoveWonAndBackslash(split[21]), // (22) (V) ½ºÅä¾î ºÎ´ã ±İ¾×
-                split[22], // (23) (W) ¹è¼ÛºñÀ¯Çü
-                ItemManager.RemoveWonAndBackslash(split[23]), // (24) (X) ÃÑ ¹è¼Ûºñ
-                ItemManager.RemoveWonAndBackslash(split[24]), // (25) (Y) ¹è¼Ûºñ
-                ItemManager.RemoveWonAndBackslash(split[25]), // (26) (Z) ¹İÇ°¹è¼Ûºñ
-                ItemManager.RemoveWonAndBackslash(split[26]), // (27) (AA) Á¦ÁÖµµ¼­Ãß°¡¹è¼Ûºñ
-                split[27], // (28) (AB) ¼ö·ÉÀÎ¸í
-                split[28], // (29) (AC) ¼ö·ÉÀÎ ¿¬¶ôÃ³
-                split[29], // (30) (AD) ¹è¼ÛÁö ÁÖ¼Ò
-                split[30], // (31) (AE) ¿ìÆí¹øÈ£
-                split[31], // (32) (AF) ¹è¼Û ¸Ş¼¼Áö
-                split[32], // (33) (AG) ¹è¼Û ¿Ï·áÀÏ
-                split[33], // (34) (AH) °áÁ¦ ¼ö´Ü
-                split[34], // (35) (AI) »óÇ°¹øÈ£
-                split[35]  // (36) (AJ) Ã¤³ÎºĞ·ù
+                split[0],  // (1) (A) ìŠ¤í† ì–´ëª…
+                split[1],  // (2) (B) ìƒí’ˆì£¼ë¬¸ë²ˆí˜¸
+                split[2],  // (3) (C) ì£¼ë¬¸ë²ˆí˜¸
+                split[3],  // (4) (D) êµ¬ë§¤í™•ì •ì¼
+                split[4],  // (5) (E) êµ¬ë§¤ìëª…
+                split[5],  // (6) (F) êµ¬ë§¤ì ID
+                split[6],  // (7) (G) êµ¬ë§¤ì ì—°ë½ì²˜
+                split[7],  // (8) (H) ì£¼ë¬¸ìƒíƒœ
+                split[8],  // (9) (I) ì£¼ë¬¸ì¼ì‹œ
+                split[9],  // (10) (J) ìƒí’ˆì½”ë“œ
+                split[10], // (11) (K) ìì²´ìƒí’ˆì½”ë“œ
+                split[11], // (12) (L) ìƒí’ˆëª…
+                split[12], // (13) (M) í’ˆëª©ì½”ë“œ
+                split[13], // (14) (N) ìì²´í’ˆëª©ì½”ë“œ
+                split[14], // (15) (O) ì˜µì…˜ì •ë³´
+                ItemManager.RemoveWonAndBackslash(split[15]), // (16) (P) íŒë§¤ê°€
+                ItemManager.RemoveWonAndBackslash(split[16]), // (17) (Q) ìƒí’ˆ í• ì¸ì•¡
+                ItemManager.RemoveWonAndBackslash(split[17]), // (18) (R) ìƒí’ˆê°€ê²©
+                split[18], // (19) (S) ìˆ˜ëŸ‰
+                ItemManager.RemoveWonAndBackslash(split[19]), // (20) (T) ìƒí’ˆì£¼ë¬¸ì•¡
+                ItemManager.RemoveWonAndBackslash(split[20]), // (21) (U) ì¿ í° í• ì¸ ê¸ˆì•¡
+                ItemManager.RemoveWonAndBackslash(split[21]), // (22) (V) ìŠ¤í† ì–´ ë¶€ë‹´ ê¸ˆì•¡
+                split[22], // (23) (W) ë°°ì†¡ë¹„ìœ í˜•
+                ItemManager.RemoveWonAndBackslash(split[23]), // (24) (X) ì´ ë°°ì†¡ë¹„
+                ItemManager.RemoveWonAndBackslash(split[24]), // (25) (Y) ë°°ì†¡ë¹„
+                ItemManager.RemoveWonAndBackslash(split[25]), // (26) (Z) ë°˜í’ˆë°°ì†¡ë¹„
+                ItemManager.RemoveWonAndBackslash(split[26]), // (27) (AA) ì œì£¼ë„ì„œì¶”ê°€ë°°ì†¡ë¹„
+                split[27], // (28) (AB) ìˆ˜ë ¹ì¸ëª…
+                split[28], // (29) (AC) ìˆ˜ë ¹ì¸ ì—°ë½ì²˜
+                split[29], // (30) (AD) ë°°ì†¡ì§€ ì£¼ì†Œ
+                split[30], // (31) (AE) ìš°í¸ë²ˆí˜¸
+                split[31], // (32) (AF) ë°°ì†¡ ë©”ì„¸ì§€
+                split[32], // (33) (AG) ë°°ì†¡ ì™„ë£Œì¼
+                split[33], // (34) (AH) ê²°ì œ ìˆ˜ë‹¨
+                split[34], // (35) (AI) ìƒí’ˆë²ˆí˜¸
+                split[35]  // (36) (AJ) ì±„ë„ë¶„ë¥˜
             );
 
-            // Å°°ªÀ¸·Î »ç¿ëÇÒ Çü½ÄÀ¸·Î ±¸¸ÅÈ®Á¤ÀÏÀ» º¯È¯
+            // í‚¤ê°’ìœ¼ë¡œ ì‚¬ìš©í•  í˜•ì‹ìœ¼ë¡œ êµ¬ë§¤í™•ì •ì¼ì„ ë³€í™˜
             DateTime purchaseConfirmationDate = DateTime.Parse(split[3]);
             string key = purchaseConfirmationDate.ToString("yyyyMM");
 
-            // Å°°ªÀÌ ÀÌ¹Ì Á¸ÀçÇÏ´ÂÁö È®ÀÎ
+            // í‚¤ê°’ì´ ì´ë¯¸ ì¡´ì¬í•˜ëŠ”ì§€ í™•ì¸
             if (orderDataContainer.ContainsKey(key))
             {
-                // ÀÌ¹Ì Á¸ÀçÇÏ´Â °æ¿ì ÇØ´ç ¸®½ºÆ®¿¡ µ¥ÀÌÅÍ Ãß°¡
+                // ì´ë¯¸ ì¡´ì¬í•˜ëŠ” ê²½ìš° í•´ë‹¹ ë¦¬ìŠ¤íŠ¸ì— ë°ì´í„° ì¶”ê°€
                 orderDataContainer[key].Add(data);
             }
             else
             {
-                // Á¸ÀçÇÏÁö ¾Ê´Â °æ¿ì »õ·Î¿î ¸®½ºÆ® »ı¼º ÈÄ µ¥ÀÌÅÍ Ãß°¡
+                // ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ê²½ìš° ìƒˆë¡œìš´ ë¦¬ìŠ¤íŠ¸ ìƒì„± í›„ ë°ì´í„° ì¶”ê°€
                 List<ZigzagOrderResource> dataList = new List<ZigzagOrderResource>();
                 dataList.Add(data);
                 orderDataContainer[key] = dataList;
@@ -200,14 +200,18 @@ public class CSVParser : MonoBehaviour
         string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         string filePath = Path.Combine(path, fileName + ".csv");
 
+        // Check if the file exists, and delete it if it does
+        if (File.Exists(filePath))
+        {
+            File.Delete(filePath);
+        }
+
+        // Create a new file and write data
         using (StreamWriter writer = new StreamWriter(filePath, true))
         {
-            // Write header if the file is empty (i.e., newly created)
-            if (new FileInfo(filePath).Length == 0)
-            {
-                writer.WriteLine("OrderPlatform,PurchaseConfirmationDate,ProductNumber," +
-                    "TotalOrderAmountPerProduct,TotalDeliveryFee,ProductCost,TotalProfit");
-            }
+            // Write header
+            writer.WriteLine("OrderPlatform,PurchaseConfirmationDate,ProductNumber," +
+                "TotalOrderAmountPerProduct,TotalDeliveryFee,ProductCost,TotalProfit");
 
             // Write data to CSV file
             for (int i = 0; i < dataList.Count; i++)
@@ -229,9 +233,9 @@ public class CSVParser : MonoBehaviour
 
 
 
-//// orderDataContainer¸¦ JSONÀ¸·Î º¯È¯
+//// orderDataContainerë¥¼ JSONìœ¼ë¡œ ë³€í™˜
 //string json = JsonUtility.ToJson(orderDataContainer, true);
 
-//// JSON ÆÄÀÏ·Î ÀúÀå
+//// JSON íŒŒì¼ë¡œ ì €ì¥
 //string filePath = Path.Combine(Application.dataPath, "Data", "orderDataContainer.json");
 //File.WriteAllText(filePath, json);

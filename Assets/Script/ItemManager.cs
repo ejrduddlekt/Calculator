@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
@@ -23,8 +23,13 @@ public class ItemManager : MonoBehaviour
         set
         {
             totalProfit = value;
-            totalProfit_Text.text = totalProfit.ToString("C0"); // ÇÑ±¹ ¿øÈ­ Çü½ÄÀ¸·Î Ç¥½Ã
+            totalProfit_Text.text = totalProfit.ToString("C0"); // í•œêµ­ ì›í™” í˜•ì‹ìœ¼ë¡œ í‘œì‹œ
         }
+    }
+
+    private void Start()
+    {
+        UpdateData();
     }
 
     public void UpdateData()
@@ -39,8 +44,9 @@ public class ItemManager : MonoBehaviour
 
     public void ClearContent()
     {
-        // ¸®½ºÆ®¿Í ÄÜÅÙÆ®ÀÇ ÀÚ½Ä °ÔÀÓ ¿ÀºêÁ§Æ®µéÀ» »èÁ¦ÇÕ´Ï´Ù.
+        // ë¦¬ìŠ¤íŠ¸ì™€ ì½˜í…íŠ¸ì˜ ìì‹ ê²Œì„ ì˜¤ë¸Œì íŠ¸ë“¤ì„ ì‚­ì œí•©ë‹ˆë‹¤.
         itemList.Clear();
+        TotalProfit.Clear();
         foreach (Transform child in content)
         {
             Destroy(child.gameObject);
@@ -54,10 +60,10 @@ public class ItemManager : MonoBehaviour
         {
             List<NaverOrderResource> dataContainer = itemContainer.NaverOrderDataContainer[key];
 
-            // °¢ Å°¿¡ ÇØ´çÇÏ´Â ¾ÆÀÌÅÛ ¸®½ºÆ®°¡ Á¸ÀçÇÏ´ÂÁö È®ÀÎ
+            // ê° í‚¤ì— í•´ë‹¹í•˜ëŠ” ì•„ì´í…œ ë¦¬ìŠ¤íŠ¸ê°€ ì¡´ì¬í•˜ëŠ”ì§€ í™•ì¸
             if (dataContainer != null && dataContainer.Count > 0)
             {
-                // ¾ÆÀÌÅÛ ¸®½ºÆ®ÀÇ °¹¼ö¸¸Å­ ¾ÆÀÌÅÛÀ» »ı¼ºÇÏ¿© contentÀÇ ÀÚ½ÄÀ¸·Î Ãß°¡
+                // ì•„ì´í…œ ë¦¬ìŠ¤íŠ¸ì˜ ê°¯ìˆ˜ë§Œí¼ ì•„ì´í…œì„ ìƒì„±í•˜ì—¬ contentì˜ ìì‹ìœ¼ë¡œ ì¶”ê°€
                 foreach (var naverData in dataContainer)
                 {
                     GameObject newItem = Instantiate(itemPrefab, content);
@@ -75,7 +81,7 @@ public class ItemManager : MonoBehaviour
                         naverData.PurchaseConfirmationDate, 
                         naverData.ProductNumber, 
                         naverData.TotalOrderAmountPerProduct, 
-                        (int.Parse(naverData.TotalDeliveryFee) == 0 ? 3000 : int.Parse(naverData.TotalDeliveryFee)).ToString(),  //¹è¼Ûºñ
+                        (int.Parse(naverData.TotalDeliveryFee) == 0 ? 3000 : int.Parse(naverData.TotalDeliveryFee)).ToString(),  //ë°°ì†¡ë¹„
                         "0",
                         productCost
                         );
@@ -96,16 +102,16 @@ public class ItemManager : MonoBehaviour
         {
             List<ZigzagOrderResource> dataContainer = itemContainer.ZigZagOrderDataContainer[key];
 
-            // °¢ Å°¿¡ ÇØ´çÇÏ´Â ¾ÆÀÌÅÛ ¸®½ºÆ®°¡ Á¸ÀçÇÏ´ÂÁö È®ÀÎ
+            // ê° í‚¤ì— í•´ë‹¹í•˜ëŠ” ì•„ì´í…œ ë¦¬ìŠ¤íŠ¸ê°€ ì¡´ì¬í•˜ëŠ”ì§€ í™•ì¸
             if (dataContainer != null && dataContainer.Count > 0)
             {
-                // ¾ÆÀÌÅÛ ¸®½ºÆ®ÀÇ °¹¼ö¸¸Å­ ¾ÆÀÌÅÛÀ» »ı¼ºÇÏ¿© contentÀÇ ÀÚ½ÄÀ¸·Î Ãß°¡
+                // ì•„ì´í…œ ë¦¬ìŠ¤íŠ¸ì˜ ê°¯ìˆ˜ë§Œí¼ ì•„ì´í…œì„ ìƒì„±í•˜ì—¬ contentì˜ ìì‹ìœ¼ë¡œ ì¶”ê°€
                 foreach (var zigzagData in dataContainer)
                 {
                     GameObject newItem = Instantiate(itemPrefab, content);
                     itemList.Add(newItem);
 
-                    // ¿ø°¡ »©±â
+                    // ì›ê°€ ë¹¼ê¸°
                     string productCost;
                     if (itemContainer.productCostData.TryGetValue(zigzagData.ProductNumber, out ProductCostData productCostData))
                         productCost = productCostData.productCost;
@@ -177,8 +183,8 @@ public class ItemManager : MonoBehaviour
 
     public static string RemoveWonAndBackslash(string amountText)
     {
-        // ¹®ÀÚ¿­¿¡¼­ '¿ø'°ú '\' ÅØ½ºÆ®¸¦ Á¦°ÅÇÏ¿© ¹İÈ¯
-        string removedWon = amountText.Replace("¿ø", "").Trim();
+        // ë¬¸ìì—´ì—ì„œ 'ì›'ê³¼ '\' í…ìŠ¤íŠ¸ë¥¼ ì œê±°í•˜ì—¬ ë°˜í™˜
+        string removedWon = amountText.Replace("ì›", "").Trim();
         return removedWon.Replace("\\", "").Trim();
     }
 }
