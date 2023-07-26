@@ -1,53 +1,53 @@
-using System;
+ï»¿using System;
 
 [Serializable]
 public struct NaverOrderResource
 {
-    public string PurchaseOrderNumber;             // (1) (A) »óÇ°ÁÖ¹®¹øÈ£
-    public string OrderNumber;                     // (2) (B) ÁÖ¹®¹øÈ£
-    public string PurchaseConfirmationDate;        // (3) (C) ±¸¸ÅÈ®Á¤ÀÏ
-    public string SalesChannel;                    // (4) (D) ÆÇ¸ÅÃ¤³Î
-    public string OrderStatus;                     // (5) (E) ÁÖ¹®»óÅÂ
-    public string ShippingAttribute;               // (6) (F) ¹è¼Û¼Ó¼º
-    public string FulfillmentCompany;              // (7) (G) Ç®ÇÊ¸ÕÆ®»ç
-    public string BuyerName;                       // (8) (H) ±¸¸ÅÀÚ¸í
-    public string BuyerID;                         // (9) (I) ±¸¸ÅÀÚ ID
-    public string RecipientName;                   // (10) (J) ¼ö·ÉÀÎ¸í
-    public string DispatchProcessingDate;          // (11) (K) ¹ß¼ÛÃ³¸®ÀÏ
-    public string DeliveryMethod;                  // (12) (L) ¹è¼Û¹æ¹ı
-    public string CourierCompany;                  // (13) (M) ÅÃ¹è»ç
-    public string TrackingNumber;                  // (14) (N) ¼ÛÀå¹øÈ£
-    public string DeliveryCompletionDate;          // (15) (O) ¹è¼Û¿Ï·áÀÏ
-    public string ProductNumber;                   // (16) (P) »óÇ°¹øÈ£
-    public string ProductName;                     // (17) (Q) »óÇ°¸í
-    public string ProductType;                     // (18) (R) »óÇ°Á¾·ù
-    public string ReturnCare;                      // (19) (S) ¹İÇ°¾È½ÉÄÉ¾î
-    public string OptionInfo;                      // (20) (T) ¿É¼ÇÁ¤º¸
-    public string OptionManagementCode;            // (21) (U) ¿É¼Ç°ü¸®ÄÚµå
-    public string Quantity;                        // (22) (V) ¼ö·®
-    public string ProductPrice;                    // (23) (W) »óÇ°°¡°İ
-    public string OptionPrice;                     // (24) (X) ¿É¼Ç°¡°İ
-    public string ProductDiscount;                 // (25) (Y) »óÇ°º° ÇÒÀÎ¾×
-    public string SellerBearsDiscount;             // (26) (Z) ÆÇ¸ÅÀÚ ºÎ´ã ÇÒÀÎ¾×
-    public string TotalOrderAmountPerProduct;      // (27) (AA) »óÇ°º° ÃÑ ÁÖ¹®±İ¾×
-    public string SellerProductCode;               // (28) (AB) ÆÇ¸ÅÀÚ »óÇ°ÄÚµå
-    public string SellerInternalCode1;             // (29) (AC) ÆÇ¸ÅÀÚ ³»ºÎÄÚµå1
-    public string SellerInternalCode2;             // (30) (AD) ÆÇ¸ÅÀÚ ³»ºÎÄÚµå2
-    public string DeliveryBundleNumber;            // (31) (AE) ¹è¼Ûºñ ¹­À½¹øÈ£
-    public string DeliveryFeeType;                 // (32) (AF) ¹è¼Ûºñ ÇüÅÂ
-    public string DeliveryFeeCategory;             // (33) (AG) ¹è¼Ûºñ À¯Çü
-    public string TotalDeliveryFee;                // (34) (AH) ¹è¼Ûºñ ÇÕ°è
-    public string JejuIslandAndRemoteAreaSurcharge; // (35) (AI) Á¦ÁÖ/µµ¼­ Ãß°¡¹è¼Ûºñ
-    public string DeliveryFeeDiscount;             // (36) (AJ) ¹è¼Ûºñ ÇÒÀÎ¾×
-    public string PaymentDate;                     // (37) (AK) °áÁ¦ÀÏ
-    public string PaymentMethod;                   // (38) (AL) °áÁ¦¼ö´Ü
-    public string PaymentLocation;                 // (39) (AM) °áÁ¦À§Ä¡
-    public string CommissionChargeType;            // (40) (AN) ¼ö¼ö·á °ú±İ±¸ºĞ
-    public string CommissionPaymentMethod;         // (41) (AO) ¼ö¼ö·á°áÁ¦¹æ½Ä
-    public string NaverPayOrderManagementCommission; // (42) (AP) ³×ÀÌ¹öÆäÀÌ ÁÖ¹®°ü¸® ¼ö¼ö·á
-    public string SalesIntegrationCommission;      // (43) (AQ) ¸ÅÃâ¿¬µ¿ ¼ö¼ö·á
-    public string EstimatedSettlementAmount;       // (44) (AR) Á¤»ê¿¹Á¤±İ¾×
-    public string SalesIntegrationCommissionInflowPath; // (45) (AS) ¸ÅÃâ¿¬µ¿¼ö¼ö·á À¯ÀÔ°æ·Î
+    public string PurchaseOrderNumber;             // (1) (A) ìƒí’ˆì£¼ë¬¸ë²ˆí˜¸
+    public string OrderNumber;                     // (2) (B) ì£¼ë¬¸ë²ˆí˜¸
+    public string PurchaseConfirmationDate;        // (3) (C) êµ¬ë§¤í™•ì •ì¼
+    public string SalesChannel;                    // (4) (D) íŒë§¤ì±„ë„
+    public string OrderStatus;                     // (5) (E) ì£¼ë¬¸ìƒíƒœ
+    public string ShippingAttribute;               // (6) (F) ë°°ì†¡ì†ì„±
+    public string FulfillmentCompany;              // (7) (G) í’€í•„ë¨¼íŠ¸ì‚¬
+    public string BuyerName;                       // (8) (H) êµ¬ë§¤ìëª…
+    public string BuyerID;                         // (9) (I) êµ¬ë§¤ì ID
+    public string RecipientName;                   // (10) (J) ìˆ˜ë ¹ì¸ëª…
+    public string DispatchProcessingDate;          // (11) (K) ë°œì†¡ì²˜ë¦¬ì¼
+    public string DeliveryMethod;                  // (12) (L) ë°°ì†¡ë°©ë²•
+    public string CourierCompany;                  // (13) (M) íƒë°°ì‚¬
+    public string TrackingNumber;                  // (14) (N) ì†¡ì¥ë²ˆí˜¸
+    public string DeliveryCompletionDate;          // (15) (O) ë°°ì†¡ì™„ë£Œì¼
+    public string ProductNumber;                   // (16) (P) ìƒí’ˆë²ˆí˜¸
+    public string ProductName;                     // (17) (Q) ìƒí’ˆëª…
+    public string ProductType;                     // (18) (R) ìƒí’ˆì¢…ë¥˜
+    public string ReturnCare;                      // (19) (S) ë°˜í’ˆì•ˆì‹¬ì¼€ì–´
+    public string OptionInfo;                      // (20) (T) ì˜µì…˜ì •ë³´
+    public string OptionManagementCode;            // (21) (U) ì˜µì…˜ê´€ë¦¬ì½”ë“œ
+    public string Quantity;                        // (22) (V) ìˆ˜ëŸ‰
+    public string ProductPrice;                    // (23) (W) ìƒí’ˆê°€ê²©
+    public string OptionPrice;                     // (24) (X) ì˜µì…˜ê°€ê²©
+    public string ProductDiscount;                 // (25) (Y) ìƒí’ˆë³„ í• ì¸ì•¡
+    public string SellerBearsDiscount;             // (26) (Z) íŒë§¤ì ë¶€ë‹´ í• ì¸ì•¡
+    public string TotalOrderAmountPerProduct;      // (27) (AA) ìƒí’ˆë³„ ì´ ì£¼ë¬¸ê¸ˆì•¡
+    public string SellerProductCode;               // (28) (AB) íŒë§¤ì ìƒí’ˆì½”ë“œ
+    public string SellerInternalCode1;             // (29) (AC) íŒë§¤ì ë‚´ë¶€ì½”ë“œ1
+    public string SellerInternalCode2;             // (30) (AD) íŒë§¤ì ë‚´ë¶€ì½”ë“œ2
+    public string DeliveryBundleNumber;            // (31) (AE) ë°°ì†¡ë¹„ ë¬¶ìŒë²ˆí˜¸
+    public string DeliveryFeeType;                 // (32) (AF) ë°°ì†¡ë¹„ í˜•íƒœ
+    public string DeliveryFeeCategory;             // (33) (AG) ë°°ì†¡ë¹„ ìœ í˜•
+    public string TotalDeliveryFee;                // (34) (AH) ë°°ì†¡ë¹„ í•©ê³„
+    public string JejuIslandAndRemoteAreaSurcharge; // (35) (AI) ì œì£¼/ë„ì„œ ì¶”ê°€ë°°ì†¡ë¹„
+    public string DeliveryFeeDiscount;             // (36) (AJ) ë°°ì†¡ë¹„ í• ì¸ì•¡
+    public string PaymentDate;                     // (37) (AK) ê²°ì œì¼
+    public string PaymentMethod;                   // (38) (AL) ê²°ì œìˆ˜ë‹¨
+    public string PaymentLocation;                 // (39) (AM) ê²°ì œìœ„ì¹˜
+    public string CommissionChargeType;            // (40) (AN) ìˆ˜ìˆ˜ë£Œ ê³¼ê¸ˆêµ¬ë¶„
+    public string CommissionPaymentMethod;         // (41) (AO) ìˆ˜ìˆ˜ë£Œê²°ì œë°©ì‹
+    public string NaverPayOrderManagementCommission; // (42) (AP) ë„¤ì´ë²„í˜ì´ ì£¼ë¬¸ê´€ë¦¬ ìˆ˜ìˆ˜ë£Œ
+    public string SalesIntegrationCommission;      // (43) (AQ) ë§¤ì¶œì—°ë™ ìˆ˜ìˆ˜ë£Œ
+    public string EstimatedSettlementAmount;       // (44) (AR) ì •ì‚°ì˜ˆì •ê¸ˆì•¡
+    public string SalesIntegrationCommissionInflowPath; // (45) (AS) ë§¤ì¶œì—°ë™ìˆ˜ìˆ˜ë£Œ ìœ ì…ê²½ë¡œ
 
     public NaverOrderResource(string purchaseOrderNumber, string orderNumber, string purchaseConfirmationDate, string salesChannel,
                      string orderStatus, string shippingAttribute, string fulfillmentCompany, string buyerName, string buyerID,
@@ -113,42 +113,42 @@ public struct NaverOrderResource
 [Serializable]
 public struct ZigzagOrderResource
 {
-    public string StoreName;                // (1) (A) ½ºÅä¾î¸í
-    public string PurchaseOrderNumber;      // (2) (B) »óÇ°ÁÖ¹®¹øÈ£
-    public string OrderNumber;              // (3) (C) ÁÖ¹®¹øÈ£
-    public string PurchaseConfirmationDate; // (4) (D) ±¸¸ÅÈ®Á¤ÀÏ
-    public string BuyerName;                // (5) (E) ±¸¸ÅÀÚ¸í
-    public string BuyerID;                  // (6) (F) ±¸¸ÅÀÚ ID
-    public string BuyerContact;             // (7) (G) ±¸¸ÅÀÚ ¿¬¶ôÃ³
-    public string OrderStatus;              // (8) (H) ÁÖ¹®»óÅÂ
-    public string OrderDateTime;            // (9) (I) ÁÖ¹®ÀÏ½Ã
-    public string ProductCode;              // (10) (J) »óÇ°ÄÚµå
-    public string CustomProductCode;        // (11) (K) ÀÚÃ¼»óÇ°ÄÚµå
-    public string ProductName;              // (12) (L) »óÇ°¸í
-    public string ItemCode;                 // (13) (M) Ç°¸ñÄÚµå
-    public string CustomItemCode;           // (14) (N) ÀÚÃ¼Ç°¸ñÄÚµå
-    public string OptionInfo;               // (15) (O) ¿É¼ÇÁ¤º¸
-    public string SalePrice;                // (16) (P) ÆÇ¸Å°¡
-    public string ProductDiscount;          // (17) (Q) »óÇ° ÇÒÀÎ¾×
-    public string ProductPrice;             // (18) (R) »óÇ°°¡°İ
-    public string Quantity;                 // (19) (S) ¼ö·®
-    public string ProductOrderAmount;       // (20) (T) »óÇ°ÁÖ¹®¾×
-    public string CouponDiscountAmount;     // (21) (U) ÄíÆù ÇÒÀÎ ±İ¾×
-    public string StoreBearsAmount;         // (22) (V) ½ºÅä¾î ºÎ´ã ±İ¾×
-    public string DeliveryFeeType;          // (23) (W) ¹è¼ÛºñÀ¯Çü
-    public string TotalDeliveryFee;         // (24) (X) ÃÑ ¹è¼Ûºñ
-    public string DeliveryFee;              // (25) (Y) ¹è¼Ûºñ
-    public string ReturnDeliveryFee;        // (26) (Z) ¹İÇ°¹è¼Ûºñ
-    public string JejuIslandRemoteAreaFee;  // (27) (AA) Á¦ÁÖµµ¼­Ãß°¡¹è¼Ûºñ
-    public string RecipientName;            // (28) (AB) ¼ö·ÉÀÎ¸í
-    public string RecipientContact;         // (29) (AC) ¼ö·ÉÀÎ ¿¬¶ôÃ³
-    public string DeliveryAddress;          // (30) (AD) ¹è¼ÛÁö ÁÖ¼Ò
-    public string PostalCode;               // (31) (AE) ¿ìÆí¹øÈ£
-    public string DeliveryMessage;          // (32) (AF) ¹è¼Û ¸Ş¼¼Áö
-    public string DeliveryCompletionDate;   // (33) (AG) ¹è¼Û ¿Ï·áÀÏ
-    public string PaymentMethod;            // (34) (AH) °áÁ¦ ¼ö´Ü
-    public string ProductNumber;            // (35) (AI) »óÇ°¹øÈ£
-    public string ChannelClassification;    // (36) (AJ) Ã¤³ÎºĞ·ù
+    public string StoreName;                // (1) (A) ìŠ¤í† ì–´ëª…
+    public string PurchaseOrderNumber;      // (2) (B) ìƒí’ˆì£¼ë¬¸ë²ˆí˜¸
+    public string OrderNumber;              // (3) (C) ì£¼ë¬¸ë²ˆí˜¸
+    public string PurchaseConfirmationDate; // (4) (D) êµ¬ë§¤í™•ì •ì¼
+    public string BuyerName;                // (5) (E) êµ¬ë§¤ìëª…
+    public string BuyerID;                  // (6) (F) êµ¬ë§¤ì ID
+    public string BuyerContact;             // (7) (G) êµ¬ë§¤ì ì—°ë½ì²˜
+    public string OrderStatus;              // (8) (H) ì£¼ë¬¸ìƒíƒœ
+    public string OrderDateTime;            // (9) (I) ì£¼ë¬¸ì¼ì‹œ
+    public string ProductCode;              // (10) (J) ìƒí’ˆì½”ë“œ
+    public string CustomProductCode;        // (11) (K) ìì²´ìƒí’ˆì½”ë“œ
+    public string ProductName;              // (12) (L) ìƒí’ˆëª…
+    public string ItemCode;                 // (13) (M) í’ˆëª©ì½”ë“œ
+    public string CustomItemCode;           // (14) (N) ìì²´í’ˆëª©ì½”ë“œ
+    public string OptionInfo;               // (15) (O) ì˜µì…˜ì •ë³´
+    public string SalePrice;                // (16) (P) íŒë§¤ê°€
+    public string ProductDiscount;          // (17) (Q) ìƒí’ˆ í• ì¸ì•¡
+    public string ProductPrice;             // (18) (R) ìƒí’ˆê°€ê²©
+    public string Quantity;                 // (19) (S) ìˆ˜ëŸ‰
+    public string ProductOrderAmount;       // (20) (T) ìƒí’ˆì£¼ë¬¸ì•¡
+    public string CouponDiscountAmount;     // (21) (U) ì¿ í° í• ì¸ ê¸ˆì•¡
+    public string StoreBearsAmount;         // (22) (V) ìŠ¤í† ì–´ ë¶€ë‹´ ê¸ˆì•¡
+    public string DeliveryFeeType;          // (23) (W) ë°°ì†¡ë¹„ìœ í˜•
+    public string TotalDeliveryFee;         // (24) (X) ì´ ë°°ì†¡ë¹„
+    public string DeliveryFee;              // (25) (Y) ë°°ì†¡ë¹„
+    public string ReturnDeliveryFee;        // (26) (Z) ë°˜í’ˆë°°ì†¡ë¹„
+    public string JejuIslandRemoteAreaFee;  // (27) (AA) ì œì£¼ë„ì„œì¶”ê°€ë°°ì†¡ë¹„
+    public string RecipientName;            // (28) (AB) ìˆ˜ë ¹ì¸ëª…
+    public string RecipientContact;         // (29) (AC) ìˆ˜ë ¹ì¸ ì—°ë½ì²˜
+    public string DeliveryAddress;          // (30) (AD) ë°°ì†¡ì§€ ì£¼ì†Œ
+    public string PostalCode;               // (31) (AE) ìš°í¸ë²ˆí˜¸
+    public string DeliveryMessage;          // (32) (AF) ë°°ì†¡ ë©”ì„¸ì§€
+    public string DeliveryCompletionDate;   // (33) (AG) ë°°ì†¡ ì™„ë£Œì¼
+    public string PaymentMethod;            // (34) (AH) ê²°ì œ ìˆ˜ë‹¨
+    public string ProductNumber;            // (35) (AI) ìƒí’ˆë²ˆí˜¸
+    public string ChannelClassification;    // (36) (AJ) ì±„ë„ë¶„ë¥˜
 
     public ZigzagOrderResource(string storeName, string purchaseOrderNumber, string orderNumber,
         string purchaseConfirmationDate, string buyerName, string buyerID, string buyerContact,
@@ -161,56 +161,56 @@ public struct ZigzagOrderResource
         string deliveryAddress, string postalCode, string deliveryMessage,
         string deliveryCompletionDate, string paymentMethod, string productNumber, string channelClassification)
     {
-        StoreName = storeName;                              // (1) (A) ½ºÅä¾î¸í
-        PurchaseOrderNumber = purchaseOrderNumber;          // (2) (B) »óÇ°ÁÖ¹®¹øÈ£
-        OrderNumber = orderNumber;                          // (3) (C) ÁÖ¹®¹øÈ£
-        PurchaseConfirmationDate = purchaseConfirmationDate; // (4) (D) ±¸¸ÅÈ®Á¤ÀÏ
-        BuyerName = buyerName;                              // (5) (E) ±¸¸ÅÀÚ¸í
-        BuyerID = buyerID;                                  // (6) (F) ±¸¸ÅÀÚ ID
-        BuyerContact = buyerContact;                        // (7) (G) ±¸¸ÅÀÚ ¿¬¶ôÃ³
-        OrderStatus = orderStatus;                          // (8) (H) ÁÖ¹®»óÅÂ
-        OrderDateTime = orderDateTime;                      // (9) (I) ÁÖ¹®ÀÏ½Ã
-        ProductCode = productCode;                          // (10) (J) »óÇ°ÄÚµå
-        CustomProductCode = customProductCode;              // (11) (K) ÀÚÃ¼»óÇ°ÄÚµå
-        ProductName = productName;                          // (12) (L) »óÇ°¸í
-        ItemCode = itemCode;                                // (13) (M) Ç°¸ñÄÚµå
-        CustomItemCode = customItemCode;                    // (14) (N) ÀÚÃ¼Ç°¸ñÄÚµå
-        OptionInfo = optionInfo;                            // (15) (O) ¿É¼ÇÁ¤º¸
-        SalePrice = salePrice;                              // (16) (P) ÆÇ¸Å°¡
-        ProductDiscount = productDiscount;                  // (17) (Q) »óÇ° ÇÒÀÎ¾×
-        ProductPrice = productPrice;                        // (18) (R) »óÇ°°¡°İ
-        Quantity = quantity;                                // (19) (S) ¼ö·®
-        ProductOrderAmount = productOrderAmount;            // (20) (T) »óÇ°ÁÖ¹®¾×
-        CouponDiscountAmount = couponDiscountAmount;        // (21) (U) ÄíÆù ÇÒÀÎ ±İ¾×
-        StoreBearsAmount = storeBearsAmount;                // (22) (V) ½ºÅä¾î ºÎ´ã ±İ¾×
-        DeliveryFeeType = deliveryFeeType;                  // (23) (W) ¹è¼ÛºñÀ¯Çü
-        TotalDeliveryFee = totalDeliveryFee;                // (24) (X) ÃÑ ¹è¼Ûºñ
-        DeliveryFee = deliveryFee;                          // (25) (Y) ¹è¼Ûºñ
-        ReturnDeliveryFee = returnDeliveryFee;              // (26) (Z) ¹İÇ°¹è¼Ûºñ
-        JejuIslandRemoteAreaFee = jejuIslandRemoteAreaFee;  // (27) (AA) Á¦ÁÖµµ¼­Ãß°¡¹è¼Ûºñ
-        RecipientName = recipientName;                      // (28) (AB) ¼ö·ÉÀÎ¸í
-        RecipientContact = recipientContact;                // (29) (AC) ¼ö·ÉÀÎ ¿¬¶ôÃ³
-        DeliveryAddress = deliveryAddress;                  // (30) (AD) ¹è¼ÛÁö ÁÖ¼Ò
-        PostalCode = postalCode;                            // (31) (AE) ¿ìÆí¹øÈ£
-        DeliveryMessage = deliveryMessage;                  // (32) (AF) ¹è¼Û ¸Ş¼¼Áö
-        DeliveryCompletionDate = deliveryCompletionDate;    // (33) (AG) ¹è¼Û ¿Ï·áÀÏ
-        PaymentMethod = paymentMethod;                      // (34) (AH) °áÁ¦ ¼ö´Ü
-        ProductNumber = productNumber;                      // (35) (AI) »óÇ°¹øÈ£
-        ChannelClassification = channelClassification;      // (36) (AJ) Ã¤³ÎºĞ·ù
+        StoreName = storeName;                              // (1) (A) ìŠ¤í† ì–´ëª…
+        PurchaseOrderNumber = purchaseOrderNumber;          // (2) (B) ìƒí’ˆì£¼ë¬¸ë²ˆí˜¸
+        OrderNumber = orderNumber;                          // (3) (C) ì£¼ë¬¸ë²ˆí˜¸
+        PurchaseConfirmationDate = purchaseConfirmationDate; // (4) (D) êµ¬ë§¤í™•ì •ì¼
+        BuyerName = buyerName;                              // (5) (E) êµ¬ë§¤ìëª…
+        BuyerID = buyerID;                                  // (6) (F) êµ¬ë§¤ì ID
+        BuyerContact = buyerContact;                        // (7) (G) êµ¬ë§¤ì ì—°ë½ì²˜
+        OrderStatus = orderStatus;                          // (8) (H) ì£¼ë¬¸ìƒíƒœ
+        OrderDateTime = orderDateTime;                      // (9) (I) ì£¼ë¬¸ì¼ì‹œ
+        ProductCode = productCode;                          // (10) (J) ìƒí’ˆì½”ë“œ
+        CustomProductCode = customProductCode;              // (11) (K) ìì²´ìƒí’ˆì½”ë“œ
+        ProductName = productName;                          // (12) (L) ìƒí’ˆëª…
+        ItemCode = itemCode;                                // (13) (M) í’ˆëª©ì½”ë“œ
+        CustomItemCode = customItemCode;                    // (14) (N) ìì²´í’ˆëª©ì½”ë“œ
+        OptionInfo = optionInfo;                            // (15) (O) ì˜µì…˜ì •ë³´
+        SalePrice = salePrice;                              // (16) (P) íŒë§¤ê°€
+        ProductDiscount = productDiscount;                  // (17) (Q) ìƒí’ˆ í• ì¸ì•¡
+        ProductPrice = productPrice;                        // (18) (R) ìƒí’ˆê°€ê²©
+        Quantity = quantity;                                // (19) (S) ìˆ˜ëŸ‰
+        ProductOrderAmount = productOrderAmount;            // (20) (T) ìƒí’ˆì£¼ë¬¸ì•¡
+        CouponDiscountAmount = couponDiscountAmount;        // (21) (U) ì¿ í° í• ì¸ ê¸ˆì•¡
+        StoreBearsAmount = storeBearsAmount;                // (22) (V) ìŠ¤í† ì–´ ë¶€ë‹´ ê¸ˆì•¡
+        DeliveryFeeType = deliveryFeeType;                  // (23) (W) ë°°ì†¡ë¹„ìœ í˜•
+        TotalDeliveryFee = totalDeliveryFee;                // (24) (X) ì´ ë°°ì†¡ë¹„
+        DeliveryFee = deliveryFee;                          // (25) (Y) ë°°ì†¡ë¹„
+        ReturnDeliveryFee = returnDeliveryFee;              // (26) (Z) ë°˜í’ˆë°°ì†¡ë¹„
+        JejuIslandRemoteAreaFee = jejuIslandRemoteAreaFee;  // (27) (AA) ì œì£¼ë„ì„œì¶”ê°€ë°°ì†¡ë¹„
+        RecipientName = recipientName;                      // (28) (AB) ìˆ˜ë ¹ì¸ëª…
+        RecipientContact = recipientContact;                // (29) (AC) ìˆ˜ë ¹ì¸ ì—°ë½ì²˜
+        DeliveryAddress = deliveryAddress;                  // (30) (AD) ë°°ì†¡ì§€ ì£¼ì†Œ
+        PostalCode = postalCode;                            // (31) (AE) ìš°í¸ë²ˆí˜¸
+        DeliveryMessage = deliveryMessage;                  // (32) (AF) ë°°ì†¡ ë©”ì„¸ì§€
+        DeliveryCompletionDate = deliveryCompletionDate;    // (33) (AG) ë°°ì†¡ ì™„ë£Œì¼
+        PaymentMethod = paymentMethod;                      // (34) (AH) ê²°ì œ ìˆ˜ë‹¨
+        ProductNumber = productNumber;                      // (35) (AI) ìƒí’ˆë²ˆí˜¸
+        ChannelClassification = channelClassification;      // (36) (AJ) ì±„ë„ë¶„ë¥˜
     }
 }
 
-
+[Serializable]
 public struct ProfitData
 {
-    public Platform orderPlatform;              //ÇÃ·§Æû
-    public string PurchaseConfirmationDate;     //±¸¸ÅÈ®Á¤ÀÏ
-    public string ProductNumber;                //»óÇ°¹øÈ£
-    public string TotalOrderAmountPerProduct;   //ÆÇ¸Å°¡
-    public string TotalDeliveryFee;             //¹è¼Ûºñ
-    public string etc;                          //ÆÇ¸ÅÀÚºÎ´ã±İ
-    public string productCostData;              //»óÇ°¿ø°¡
-    public string TotalProfit;                  //¼öÀÍ±İ
+    public Platform orderPlatform;              //í”Œë«í¼
+    public string PurchaseConfirmationDate;     //êµ¬ë§¤í™•ì •ì¼
+    public string ProductNumber;                //ìƒí’ˆë²ˆí˜¸
+    public string TotalOrderAmountPerProduct;   //íŒë§¤ê°€
+    public string TotalDeliveryFee;             //ë°°ì†¡ë¹„
+    public string etc;                          //íŒë§¤ìë¶€ë‹´ê¸ˆ
+    public string productCostData;              //ìƒí’ˆì›ê°€
+    public string TotalProfit;                  //ìˆ˜ìµê¸ˆ
 
 
     public ProfitData(Platform _Platform, 
@@ -222,14 +222,14 @@ public struct ProfitData
         string _productCostData, 
         string _TotalProfit = null)
     {
-        orderPlatform = _Platform;                              //ÇÃ·§Æû
-        PurchaseConfirmationDate = _PurchaseConfirmationDate;   //±¸¸ÅÈ®Á¤ÀÏ
-        ProductNumber = _ProductNumber;                         //»óÇ°¹øÈ£
-        TotalOrderAmountPerProduct = _TotalOrderAmountPerProduct; //ÆÇ¸Å°¡
-        TotalDeliveryFee = _TotalDeliveryFee;                   //¹è¼Ûºñ
-        etc = _etc;                                             //ÆÇ¸ÅÀÚºÎ´ã±İ
-        productCostData = _productCostData;                     //»óÇ°¿ø°¡
-        TotalProfit = _TotalProfit ?? "";                       //¼öÀÍ±İ
+        orderPlatform = _Platform;                              //í”Œë«í¼
+        PurchaseConfirmationDate = _PurchaseConfirmationDate;   //êµ¬ë§¤í™•ì •ì¼
+        ProductNumber = _ProductNumber;                         //ìƒí’ˆë²ˆí˜¸
+        TotalOrderAmountPerProduct = _TotalOrderAmountPerProduct; //íŒë§¤ê°€
+        TotalDeliveryFee = _TotalDeliveryFee;                   //ë°°ì†¡ë¹„
+        etc = _etc;                                             //íŒë§¤ìë¶€ë‹´ê¸ˆ
+        productCostData = _productCostData;                     //ìƒí’ˆì›ê°€
+        TotalProfit = _TotalProfit ?? "";                       //ìˆ˜ìµê¸ˆ
     }
 }
 

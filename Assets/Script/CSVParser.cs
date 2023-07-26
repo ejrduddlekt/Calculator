@@ -195,7 +195,7 @@ public class CSVParser : MonoBehaviour
         return orderDataContainer;
     }
 
-    public void CreateCSVFile(List<ProfitData> dataList, List<string> productCostList, string fileName = "profit_data")
+    public void CreateCSVFile(List<ProfitData> dataList, string fileName = "profit_data")
     {
         string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         string filePath = Path.Combine(path, fileName + ".csv");
@@ -207,20 +207,19 @@ public class CSVParser : MonoBehaviour
         }
 
         // Create a new file and write data
-        using (StreamWriter writer = new StreamWriter(filePath, true))
+        using (StreamWriter writer = new StreamWriter(filePath, true, Encoding.UTF8))
         {
             // Write header
-            writer.WriteLine("OrderPlatform,PurchaseConfirmationDate,ProductNumber," +
-                "TotalOrderAmountPerProduct,TotalDeliveryFee,ProductCost,TotalProfit");
+            writer.WriteLine("플랫폼,구매일자,상품번호," +
+                "판매가,배송비/스토어부담,상품원가,수익금");
 
             // Write data to CSV file
             for (int i = 0; i < dataList.Count; i++)
             {
-                string productCost = productCostList[i]; // Get the productCost for the current ProfitData
                 ProfitData data = dataList[i]; // Get the ProfitData for the current productCost
 
                 writer.WriteLine($"{data.orderPlatform},{data.PurchaseConfirmationDate},{data.ProductNumber}," +
-                    $"{data.TotalOrderAmountPerProduct},{data.TotalDeliveryFee},{productCost},{data.TotalProfit}");
+                    $"{data.TotalOrderAmountPerProduct},{data.TotalDeliveryFee},{data.productCostData},{data.TotalProfit}");
             }
         }
     }

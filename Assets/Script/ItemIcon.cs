@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,7 +14,7 @@ public class ItemIcon : MonoBehaviour
     public TextMeshProUGUI text_Platform;
 
     public TextMeshProUGUI text_TotalProfit;
-    ProfitData profitData;
+    public ProfitData profitData;
 
     public int UpdateTotalProfit
     {
@@ -38,7 +38,7 @@ public class ItemIcon : MonoBehaviour
             text_TotalOrderAmountPerProduct.text = value.TotalOrderAmountPerProduct;
             text_TotalDeliveryFee.text = value.TotalDeliveryFee;
             text_ProductCost.text = value.productCostData;
-            //text_TotalProfit.text = value.TotalProfit?? "No data";
+            text_TotalProfit.text = value.TotalProfit?? "No data";
 
             switch (value.orderPlatform)
             {

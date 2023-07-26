@@ -10,7 +10,6 @@ public class ItemManager : MonoBehaviour
     public DataContainer itemContainer = new DataContainer();
 
     public List<GameObject> itemList = new List<GameObject>();
-    public List<ProfitData> TotalProfit = new List<ProfitData>();
 
     public Transform content;
 
@@ -46,7 +45,6 @@ public class ItemManager : MonoBehaviour
     {
         // 리스트와 콘텐트의 자식 게임 오브젝트들을 삭제합니다.
         itemList.Clear();
-        TotalProfit.Clear();
         foreach (Transform child in content)
         {
             Destroy(child.gameObject);
@@ -75,18 +73,17 @@ public class ItemManager : MonoBehaviour
                         productCost = productCostData.productCost;
                     else
                         productCost = "No Data";
-                    
+
                     var _profitData = new ProfitData(
-                        Platform.Naver, 
-                        naverData.PurchaseConfirmationDate, 
-                        naverData.ProductNumber, 
-                        naverData.TotalOrderAmountPerProduct, 
+                        Platform.Naver,
+                        naverData.PurchaseConfirmationDate,
+                        naverData.ProductNumber,
+                        naverData.TotalOrderAmountPerProduct,
                         (int.Parse(naverData.TotalDeliveryFee) == 0 ? 3000 : int.Parse(naverData.TotalDeliveryFee)).ToString(),  //배송비
                         "0",
                         productCost
                         );
 
-                    TotalProfit.Add(_profitData);
                     newItem.GetComponent<ItemIcon>().TotalProfitValue = _profitData;
                 }
             }
@@ -121,16 +118,15 @@ public class ItemManager : MonoBehaviour
 
                     //TotalProfitValue += _profit;
                     var _profitData = new ProfitData(
-                        Platform.ZigZag, 
-                        zigzagData.PurchaseConfirmationDate, 
-                        zigzagData.ProductNumber, 
+                        Platform.ZigZag,
+                        zigzagData.PurchaseConfirmationDate,
+                        zigzagData.ProductNumber,
                         zigzagData.ProductOrderAmount,
                         (int.Parse(zigzagData.TotalDeliveryFee) == 0 ? 3000 : int.Parse(zigzagData.TotalDeliveryFee)) + " / " + zigzagData.StoreBearsAmount,
                         zigzagData.StoreBearsAmount,
                         productCost
                         );
 
-                    TotalProfit.Add(_profitData);
                     newItem.GetComponent<ItemIcon>().TotalProfitValue = _profitData;
                 }
             }
@@ -158,22 +154,13 @@ public class ItemManager : MonoBehaviour
 
     public void CreateCSV()
     {
-        List<string> costList = new List<string>();
-        for (int i = 0; i < TotalProfit.Count; i++)
+        List<ProfitData> itemDatas = new();
+        foreach (var item in itemList)
         {
-            if (itemContainer.productCostData.TryGetValue(TotalProfit[i].ProductNumber, out ProductCostData productCostData))
-            {
-                costList.Add(productCostData.productCost);
-
-            }
-            else
-            {
-                costList.Add("No Data");
-            }
-
+            itemDatas.Add(item.GetComponent<ItemIcon>().profitData);
         }
-
-        GetComponent<CSVParser>().CreateCSVFile(TotalProfit, costList);
+        GetComponent<CSVParser>().CreateCSVFile(itemDatas, this.GetComponent<CreateFileConfirm>().inputField.text);
+        this.GetComponent<CreateFileConfirm>().confirmPanel.SetActive(false);
     }
 
     public void CloseApp()
